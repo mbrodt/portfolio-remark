@@ -2,12 +2,28 @@
 http://localhost:8081/
 
 ###
-
 POST http://localhost:8081/register HTTP/1.1
 content-type: application/json
 
 {
     "name": "Mads",
-    "email": "acclas",
-    "password": "123"
+    "email": "q111@lol.dk",
+    "password": "123",
+    "confirmPassword": "123"
 }
+
+###
+
+POST http://localhost:8081/login HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Mads",
+    "email": "qq19@lol.dk",
+    "password": "123",
+    "confirmPassword": "123"
+}
+
+###
+
+http://localhost:8081/login

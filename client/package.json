@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "postcss-import": "^11.1.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
@@ -15,11 +16,15 @@
     "@vue/cli-plugin-babel": "^3.0.0-rc.9",
     "@vue/cli-service": "^3.0.0-rc.9",
     "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.6",
     "sass-loader": "^7.0.1",
+    "tailwindcss": "^0.6.4",
     "vue-template-compiler": "^2.5.16"
   },
   "postcss": {
     "plugins": {
+      "postcss-import": {},
+      "tailwindcss": "./tailwind.js",
       "autoprefixer": {}
     }
   },
