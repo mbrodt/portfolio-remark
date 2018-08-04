@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Register from './views/Register.vue'
 import LogIn from './views/LogIn.vue'
-import Test from './views/Test.vue'
 
 Vue.use(Router)
 
@@ -23,11 +22,6 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: LogIn
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: Test
     },
     {
       path: '/about',

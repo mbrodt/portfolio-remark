@@ -24,10 +24,7 @@ export default new Vuex.Store({
     },
     updateErrors(state, errors) {
       console.log('errors in vuex', errors)
-      errors.forEach(err => {
-        console.log('my err', err)
-        state.errors.push(err)
-      })
+      state.errors = errors
     }
   }
 })

@@ -1,37 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <router-link v-if="!this.$store.state.isLoggedIn" to="/register">Sign Up</router-link> 
-      <router-link v-if="!this.$store.state.isLoggedIn" to="/login">Log In</router-link>
-      <button class="bg-red" v-if="this.$store.state.isLoggedIn" @click="logout">Log Out</button>
-    </div>
+  <div id="app" class="">
+    <site-navigation></site-navigation>
+    <div class="container mx-auto bg-yellow">
+
     <router-view/>
-    <h3>Errors:</h3>
-        <div v-if="this.$store.state.errors.length > 0">
-    <li v-for="error in this.$store.state.errors" :key="error.msg">
-      {{error.msg}}
-    </li>
+    <display-errors></display-errors>
     </div>
+
   </div>
 </template>
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+import LogOutComponent from '@/components/LogOutComponent'
+import DisplayErrors from '@/components/DisplayErrors'
+import SiteNavigation from '@/components/SiteNavigation'
 export default {
-  methods: {
-    async logout() {
-      console.log('logging out client')
-      try {
-        const response = await AuthenticationService.logout()
-        this.$store.commit('logout')
-      } catch (err) {
-        console.log('error! couldnt log out!', { err })
-      }
-      console.log('going to root')
-      this.$router.push('/login')
-    }
+  components: {
+    LogOutComponent,
+    DisplayErrors,
+    SiteNavigation
+  },
+  created() {
+    document.body.classList.add('bg-grey-lightest')
   }
 }
 </script>
@@ -47,13 +38,6 @@ export default {
 }
 #nav {
   padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
 

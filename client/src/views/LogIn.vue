@@ -1,5 +1,6 @@
 <template>
  <div class="w-full max-w-xs mx-auto">
+       <h1 class="mb-4">Login</h1>
   <form @submit.prevent="login" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
     <div class="mb-4">
       <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
@@ -14,7 +15,7 @@
       <input class="form-input" name="password" type="password" placeholder="******************" v-model="password">
     </div>
     <div class="flex items-center justify-between mt-8">
-      <button class="bg-indigo hover:bg-indigo-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+      <button class="btn-primary" 
       type="submit">
        Log In
       </button>
@@ -44,12 +45,18 @@ export default {
         })
         this.updateStore(response.data.user)
       } catch (err) {
-        console.log('error!!', err)
-        this.$store.commit('updateErrors', err.response.data.errors)
+        let errors = [
+          {
+            msg: 'The email or password was incorrect.'
+          }
+        ]
+        console.log('error!!', errors)
+        this.$store.commit('updateErrors', errors)
       }
     },
     updateStore(user) {
       this.$store.commit('login', user)
+      this.$store.commit('updateErrors', [])
       this.$router.push('/')
     }
   }

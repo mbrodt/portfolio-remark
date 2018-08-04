@@ -47,7 +47,7 @@ exports.register = async (req, res, next) => {
     res.status(409).send({
       errors: [
         {
-          msg: errors.message
+          msg: 'A user with that email is already registered'
         }
       ]
     })

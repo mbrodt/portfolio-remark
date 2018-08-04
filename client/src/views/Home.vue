@@ -1,17 +1,24 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Welcome, {{this.$store.state.activeUser.name}}</h1>
+    <button @click="addPortfolio" class="btn-primary py-4">Add Portfolio</button>
+    <portfolio-list></portfolio-list>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PortfolioList from '@/components/PortfolioList'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    PortfolioList
+  },
+  methods: {
+    addPortfolio() {
+      console.log('Adding portfolio')
+    }
   }
 }
 </script>
