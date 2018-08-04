@@ -1,5 +1,7 @@
 <template>
- <div class="w-full max-w-xs mx-auto">
+  <div >
+    <h1>TEST PAGE</h1>
+    <test-component><div class="w-full max-w-xs mx-auto">
   <form @submit.prevent="login" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
     <div class="mb-4">
       <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
@@ -23,35 +25,16 @@
       </a>
     </div>
   </form>
-</div>
+</div></test-component>
+  </div>
 </template>
 
 <script>
-import AuthenticationService from '@/services/AuthenticationService'
+import TestComponent from '../components/TestComponent'
 export default {
-  data() {
-    return {
-      email: '',
-      password: ''
-    }
-  },
-  methods: {
-    async login() {
-      try {
-        const response = await AuthenticationService.login({
-          email: this.email,
-          password: this.password
-        })
-        this.updateStore(response.data.user)
-      } catch (err) {
-        console.log('error!!', err)
-        this.$store.commit('updateErrors', err.response.data.errors)
-      }
-    },
-    updateStore(user) {
-      this.$store.commit('login', user)
-      this.$router.push('/')
-    }
+  components: {
+    TestComponent
   }
 }
 </script>
+

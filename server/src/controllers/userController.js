@@ -16,6 +16,10 @@ exports.validateRegister = (req, res, next) => {
     gmail_remove_subaddress: false
   })
   req.checkBody('password', 'Password Cannot be Blank!').notEmpty()
+
+  req
+    .checkBody('password', 'Password must be between 8 and 32 characters')
+    .isLength({ min: 5, max: 32 })
   req
     .checkBody('confirmPassword', 'Confirmed Password cannot be blank!')
     .notEmpty()

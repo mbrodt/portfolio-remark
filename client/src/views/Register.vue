@@ -48,22 +48,17 @@
     </div>
   </form>
 </div>
-    <div v-if="errors.length > 0">
+    <!-- <div v-if="errors.length > 0">
     <li v-for="error in errors" :key="error.msg">
       {{error.msg}}
     </li>
-    </div>
-<log-out-button :isLoggedIn="isLoggedIn"></log-out-button>
+    </div> -->
   </div>
 </template>
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
-import LogOutButton from '@/components/LogOutButton.vue'
 export default {
-  components: {
-    LogOutButton
-  },
   data() {
     return {
       name: '',
@@ -71,9 +66,7 @@ export default {
       password: '',
       confirmPassword: '',
       errors: [],
-      working: false,
-      activeUser: null,
-      isLoggedIn: false
+      working: false
     }
   },
   methods: {
@@ -90,8 +83,11 @@ export default {
         this.activeUser = response.data.user
         this.isLoggedIn = true
         this.errors = []
+        this.$router.push('/')
       } catch (err) {
+        console.log()
         // this.error = err.response
+        this.$store.commit('updateErrors', err.response.data.errors)
         this.errors = err.response.data.errors
       }
       this.working = false

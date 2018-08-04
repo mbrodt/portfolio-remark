@@ -5,16 +5,17 @@ exports.login = (req, res, next) => {
 }
 
 exports.returnAuthenticatedUser = (req, res) => {
-  console.log('IM A TEST')
   res.send({
     user: req.user
   })
 }
 
 exports.logout = (req, res) => {
+  console.log('logging out')
   req.logout()
-  req.flash('success', 'You are now logged out! 👋')
-  res.redirect('/')
+  res.send({
+    msg: `Successfully logged out`
+  })
 }
 
 exports.isLoggedIn = (req, res, next) => {
