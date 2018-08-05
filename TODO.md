@@ -17,3 +17,5 @@
 1.  Increase likes on heart click (or remove if already liked)
 
 1.  Animate svg color on like
+
+1.  Make view comments a link
