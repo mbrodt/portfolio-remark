@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const userController = require('../controllers/userController')
 const authController = require('../controllers/authController')
+const portfolioController = require('../controllers/portfolioController')
 const passport = require('passport')
 
 router.get('/', (req, res) => {
@@ -11,10 +12,13 @@ router.get('/', (req, res) => {
   })
 })
 
+router.post('/add', portfolioController.createPortfolio)
+router.get('/portfolios', portfolioController.getPortfolios)
 
-router.post('/login', 
-authController.login, 
-authController.returnAuthenticatedUser
+router.post(
+  '/login',
+  authController.login,
+  authController.returnAuthenticatedUser
 )
 // router.post('/login', passport.authenticate('local'), (req, res) => {
 //   console.log(req.user)

@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="">
     <site-navigation></site-navigation>
-    <div class="container mx-auto bg-yellow">
+    <div class="container mx-auto">
 
     <router-view/>
     <display-errors></display-errors>
@@ -23,6 +23,7 @@ export default {
   },
   created() {
     document.body.classList.add('bg-grey-lightest')
+    document.body.classList.add('font-sans')
   }
 }
 </script>
@@ -30,9 +31,9 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }

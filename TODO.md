@@ -1,11 +1,19 @@
 # TODO
 
-1.  Allow users to add their portfolio
+1.  Create UI to add portfolio
 
-1.  Display portfolios on homepage
-
-1.  Figure out how to remove duplication from register and login
+1.  Display portfolios on homepage on pageload
 
 1.  Properly use process.ENV.variables
 
 1.  Make user page (include social media)
+
+1.  Dont destroy portfolio list when leaving view
+
+1.  Display comments in UI + style
+
+1.  Style likes and view comments link
+
+1.  Increase likes on heart click (or remove if already liked)
+
+1.  Animate svg color on like

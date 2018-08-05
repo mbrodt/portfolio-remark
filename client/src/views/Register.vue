@@ -64,9 +64,7 @@ export default {
         console.log(response)
         this.updateStore(response.data.user)
       } catch (err) {
-        let errors = err.response.data.errors
-        console.log('errors', errors)
-        this.$store.commit('updateErrors', errors)
+        this.$store.commit('updateErrors', err.response.data.errors)
       }
     },
     updateStore(user) {

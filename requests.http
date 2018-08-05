@@ -25,5 +25,20 @@ content-type: application/json
 }
 
 ###
+POST http://localhost:8081/add HTTP/1.1
+content-type: application/json
 
-http://localhost:8081/login
+{
+    "url": "mbrodt.github.io",
+    "likes": 5121,
+    "comments": [{
+        "content": "A very nice portfolio indeed!",
+        "likes": 5
+    }, {
+        "content": "Loving the colors",
+        "likes": 3
+    }]
+}
+
+###
+http://localhost:8081/portfolios

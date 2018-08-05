@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <h1>Welcome, {{this.$store.state.activeUser.name}}</h1>
+    <h1 v-if="this.$store.state.isLoggedIn">Welcome, {{this.$store.state.activeUser.name}}</h1>
+    <h1 v-else>Currently browsing all portfolios</h1>
+
     <button @click="addPortfolio" class="btn-primary py-4">Add Portfolio</button>
     <portfolio-list></portfolio-list>
   </div>
@@ -14,6 +16,11 @@ export default {
   name: 'home',
   components: {
     PortfolioList
+  },
+  data() {
+    return {
+      portfolios: []
+    }
   },
   methods: {
     addPortfolio() {

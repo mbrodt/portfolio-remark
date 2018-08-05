@@ -1,0 +1,10 @@
+MVP:
+Upload portfolio
+Browse all portfolios
+Comment on portfolio
+Browse comments on portfolio
+
+
+Nice to have:
+Like portfolio
+Sort by most recent / most liked / by role

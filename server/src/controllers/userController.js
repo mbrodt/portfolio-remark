@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('../models/User')
 
-exports.loginForm = (req, res) => {
-  res.send('Login form')
-}
-
 exports.validateRegister = (req, res, next) => {
   console.log(req.body)
   req.sanitizeBody('name')
