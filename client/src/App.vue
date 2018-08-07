@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="">
+    
     <site-navigation></site-navigation>
     <div class="container mx-auto">
 
