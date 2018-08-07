@@ -19,3 +19,7 @@
 1.  Animate svg color on like
 
 1.  Make view comments a link
+
+1.  Make sure the createPortfolio function doesn't submit likes or comments.
+
+1.  Fix likes not showing

@@ -13,10 +13,14 @@ exports.createPortfolio = async (req, res) => {
     req.body.url = 'https://' + url
   }
 
+  finalUrl = {
+    url: req.body.url
+  }
   try {
     const portfolio = await new Portfolio(req.body).save()
   } catch (err) {
     console.log('There was an error')
+    console.log('error', err)
   }
   // console.log('portfolio time', portfolio._id.getTimestamp())
 }
