@@ -14,12 +14,10 @@
 
 1.  Style likes and view comments link
 
-1.  Increase likes on heart click (or remove if already liked)
-
-1.  Animate svg color on like
-
 1.  Make view comments a link
 
 1.  Make sure the createPortfolio function doesn't submit likes or comments.
 
-1.  Fix likes not showing
+1. Update likes in backend
+
+1. Properly make add portfolio UI and allow escape/enter etc.

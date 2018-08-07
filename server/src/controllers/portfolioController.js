@@ -13,11 +13,13 @@ exports.createPortfolio = async (req, res) => {
     req.body.url = 'https://' + url
   }
 
-  finalUrl = {
-    url: req.body.url
+  testme = {
+    url: req.body.url,
+    likes: 0
+    // timestamp
   }
   try {
-    const portfolio = await new Portfolio(finalUrl).save()
+    const portfolio = await new Portfolio(testme).save()
   } catch (err) {
     console.log('There was an error')
     console.log('error', err)
@@ -27,7 +29,7 @@ exports.createPortfolio = async (req, res) => {
 
 exports.getPortfolios = async (req, res) => {
   console.log('Getting all portfolios')
-  const portfolios = await Portfolio.find()
+  const portfolios = await Portfolio.find().sort({ created_at: -1 })
   console.log(portfolios)
   res.send({
     portfolios

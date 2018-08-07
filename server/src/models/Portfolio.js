@@ -24,6 +24,10 @@ const portfolioSchema = new Schema({
   },
   // visited: Number,
   likes: Number,
+  created_at: {
+    type: Date,
+    default: Date.now
+  },
   comments: [commentSchema]
 })
 
