@@ -17,7 +17,7 @@ exports.createPortfolio = async (req, res) => {
     url: req.body.url
   }
   try {
-    const portfolio = await new Portfolio(req.body).save()
+    const portfolio = await new Portfolio(finalUrl).save()
   } catch (err) {
     console.log('There was an error')
     console.log('error', err)
