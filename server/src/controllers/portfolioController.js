@@ -4,6 +4,7 @@ const validator = require('validator')
 exports.createPortfolio = async (req, res) => {
   console.log('Adding portfolio in server')
   let { url } = req.body
+  console.log('body', req.body)
   let isurl = validator.isURL(url, {
     protocols: ['http', 'https'],
     require_protocol: true
@@ -12,8 +13,12 @@ exports.createPortfolio = async (req, res) => {
     req.body.url = 'https://' + url
   }
 
-  const portfolio = await new Portfolio(req.body).save()
-  console.log('portfolio time', portfolio._id.getTimestamp())
+  try {
+    const portfolio = await new Portfolio(req.body).save()
+  } catch (err) {
+    console.log('There was an error')
+  }
+  // console.log('portfolio time', portfolio._id.getTimestamp())
 }
 
 exports.getPortfolios = async (req, res) => {

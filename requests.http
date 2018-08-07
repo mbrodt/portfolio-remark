@@ -18,10 +18,8 @@ POST http://localhost:8081/login HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Mads",
-    "email": "qq19@lol.dk",
-    "password": "123",
-    "confirmPassword": "123"
+    "email": "m1@me.dk",
+    "password": "11111111"
 }
 
 ###
