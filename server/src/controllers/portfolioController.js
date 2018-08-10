@@ -20,9 +20,11 @@ exports.createPortfolio = async (req, res) => {
   }
   try {
     const portfolio = await new Portfolio(testme).save()
+    res.send(portfolio)
   } catch (err) {
     console.log('There was an error')
     console.log('error', err)
+    res.status(400).send('Something went wrong')
   }
   // console.log('portfolio time', portfolio._id.getTimestamp())
 }

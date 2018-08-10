@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "postcss-import": "^11.1.0",
     "vue": "^2.5.16",
